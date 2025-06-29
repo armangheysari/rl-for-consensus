@@ -10,7 +10,7 @@ sys.path.insert(0, os.path.join(os.path.dirname(__file__), ".."))
 from src.pbft.simulator import PBFTSimulator, EpisodeStats
 
 
-def test_no_byzantine_commits_everything():
+def test_no_byzantine_commits():
     sim = PBFTSimulator(n=4, f=1, byzantine_indices=set(), rng_seed=42)
     stats = sim.run_episode(num_requests=10, max_steps_per_request=30)
     assert stats.requests_total == 10
@@ -109,7 +109,7 @@ def test_reproducibility():
 
 if __name__ == "__main__":
     test_n_must_satisfy_3f_plus_1()
-    test_no_byzantine_commits_everything()
+    test_no_byzantine_commits()
     test_byzantine_leader_commits_corrupted_value()
     test_view_change_recovery()
     test_stats_fields_populated()

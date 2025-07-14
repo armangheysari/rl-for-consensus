@@ -162,7 +162,7 @@ class ConsensusEnv(gym.Env):
     # ----------------------------------------------------------------
 
     def _stats_to_obs(self, stats: EpisodeStats) -> np.ndarray:
-        avg_lat = min(stats.avg_commit_latency / 50.0, 1.0)
+        avg_lat = min(stats.avg_commit_latency / 50.0, 1.0)  # normalize
         vcs = min(stats.view_changes / 10.0, 1.0)
         commit_rate = max(0.0, min(1.0, stats.commit_rate))
         byz = max(0.0, min(1.0, stats.byzantine_fraction))

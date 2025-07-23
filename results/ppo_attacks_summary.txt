@@ -1,0 +1,29 @@
+PPO (advanced) vs static baselines — summary
+======================================================================
+
+Episodes per policy: 100
+RNG seed: 42
+Committee sizes: (3, 5, 7, 9)
+View-change timeouts: (5, 10, 15, 20)
+Max byzantine fraction: 0.30
+Attack types: ['collusion', 'equivocation', 'timing']
+
+Mean commit rate by byzantine fraction:
+   byz |    smallest_aggressive |   largest_conservative |                 oracle |                    ppo
+--------------------------------------------------------------------------------------------------------------
+  0.00 |                  1.000 |                  1.000 |                  1.000 |                  1.000 | 
+  0.11 |                  0.000 |                  0.966 |                  0.000 |                  0.952 | 
+  0.20 |                  0.000 |                  0.000 |                  0.000 |                  1.000 | 
+  0.22 |                  0.000 |                  1.000 |                  0.000 |                  1.000 | 
+  0.33 |                  0.000 |                  0.000 |                  0.000 |                  0.000 | 
+  0.40 |                  0.000 |                  0.000 |                  0.000 |                  0.000 | 
+  0.44 |                  0.000 |                  0.000 |                  0.000 |                  0.000 | 
+  0.56 |                  0.000 |                  0.000 |                  0.000 |                  0.000 | 
+  0.60 |                  0.000 |                  0.000 |                  0.000 |                  0.000 | 
+  0.67 |                  0.000 |                  0.000 |                  0.000 |                  0.000 | 
+
+Overall mean commit rate (across all byzantine fractions):
+     smallest_aggressive: 0.620
+    largest_conservative: 0.780
+                  oracle: 0.620
+                     ppo: 0.810

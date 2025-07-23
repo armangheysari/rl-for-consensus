@@ -1,0 +1,35 @@
+PPO (advanced v2) vs static baselines — summary
+======================================================================
+
+Episodes per policy: 200
+RNG seed: 42
+Committee sizes: (3, 5, 7, 9)
+View-change timeouts: (5, 10, 15, 20)
+Max byzantine fraction: 0.30
+Attack types: none (default Byzantine)
+Network: [128, 128, 64] ReLU (custom feature extractor)
+Reward: variable safety penalty (scales with violation magnitude)
+
+Mean commit rate by byzantine fraction:
+   byz |    smallest_aggressive |   largest_conservative |                 oracle |                    ppo
+--------------------------------------------------------------------------------------------------------------
+  0.00 |                  1.000 |                  1.000 |                  1.000 |                  1.000 | 
+  0.11 |                  0.000 |                  1.000 |                  0.000 |                  0.000 | 
+  0.14 |                  0.000 |                  0.000 |                  0.000 |                  1.000 | 
+  0.20 |                  0.000 |                  0.000 |                  0.000 |                  1.000 | 
+  0.22 |                  0.000 |                  1.000 |                  0.000 |                  0.000 | 
+  0.29 |                  0.000 |                  0.000 |                  0.000 |                  1.000 | 
+  0.33 |                  0.000 |                  0.000 |                  0.000 |                  0.000 | 
+  0.40 |                  0.000 |                  0.000 |                  0.000 |                  0.000 | 
+  0.43 |                  0.000 |                  0.000 |                  0.000 |                  0.000 | 
+  0.44 |                  0.000 |                  0.000 |                  0.000 |                  0.000 | 
+  0.56 |                  0.000 |                  0.000 |                  0.000 |                  0.000 | 
+  0.57 |                  0.000 |                  0.000 |                  0.000 |                  0.000 | 
+  0.60 |                  0.000 |                  0.000 |                  0.000 |                  0.000 | 
+  0.67 |                  0.000 |                  0.000 |                  0.000 |                  0.000 | 
+
+Overall mean commit rate (across all byzantine fractions):
+     smallest_aggressive: 0.660
+    largest_conservative: 0.805
+                  oracle: 0.660
+                     ppo: 0.810

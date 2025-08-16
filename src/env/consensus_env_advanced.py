@@ -251,7 +251,7 @@ class ConsensusEnvAdvanced(ConsensusEnv):
         # Efficiency: penalize larger committees (PBFT message complexity is O(n^2))
         n = stats.committee_size
         n_max = max(self.committee_sizes)
-        alpha = 0.30
+        alpha = 0.30  # overhead weight
         efficiency = 1.0 - alpha * (n / n_max) ** 2
         throughput = stats.commit_rate * max(0.0, efficiency)
         # Variable safety penalty

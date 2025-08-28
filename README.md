@@ -3,7 +3,7 @@
 A reinforcement learning agent that tunes PBFT parameters (committee size,
 view-change timeout, reconfiguration threshold) in response to observed
 fault patterns. The simulator implements the three-phase pre-prepare /
-prepare / commit protocol from Castro and Liskov (OSDI 1999) with view
+prepare / commit protocol from Castro & Liskov (OSDI 1999) with view
 changes and Byzantine workers.
 
 The work builds on my MSc thesis on Byzantine fault-tolerant SoC design
@@ -39,7 +39,7 @@ can do better, and do so safely.
 
 Three phases done.
 
-* PBFT simulator with view changes (Castro and Liskov, OSDI 1999).
+* PBFT simulator with view changes (Castro & Liskov, OSDI 1999).
 * Gymnasium environment with single-action (committee size) and
   multi-action (committee size + view-change timeout) variants.
 * Three static baselines: smallest, largest, oracle.

@@ -83,7 +83,7 @@ Plots: `results/ppo_vs_baseline.png` (Phase 2),
 Python 3.10+, gymnasium >= 0.29, stable-baselines3 >= 2.2, torch >= 2.1,
 numpy, matplotlib.
 
-## Quickstart
+## Usage
 
 ```bash
 pip install -r requirements.txt

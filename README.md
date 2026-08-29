@@ -119,3 +119,17 @@ MIT. See `LICENSE`.
 ## Author
 
 Arman Gheysari, [armangheysari.github.io](https://armangheysari.github.io)
+
+## Notes
+
+The simulator uses synchronous rounds with a fixed message delay of 1
+step. Real PBFT deployments operate under partial synchrony, where
+message delays are unknown and can grow under adversarial conditions.
+Extending the simulator to support variable delays and network
+partitions is left as future work.
+
+The current action space is limited to committee size (basic env) and
+committee size plus view-change timeout (advanced env). A natural
+extension is to add the reconfiguration threshold as a third action
+dimension, which would let the agent learn when to trigger view
+changes proactively rather than waiting for the timeout.
